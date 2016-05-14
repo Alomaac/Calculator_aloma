@@ -188,11 +188,20 @@ public class Calculator  extends Application{
 			  if(flag)tf.setText("");
 			  flag=false;
 			  String s=tf.getText();
+			  if(s.isEmpty())
+			  {
+				  tf.setText(""); 
+			  }
+			  else
+				  
+			  {
 			  double m=Double.valueOf(s);
 			  m*=-1;
 			  tf.setText(m+"");
 			  tf1.setText(" ");
+			  }
 		  });
+		  
 		  
 		 
 		  Scientific.setOnAction(e->{               
@@ -403,7 +412,16 @@ public class Calculator  extends Application{
 			  if(flag)tf.setText("");
 			  flag=false;
 			  String s=tf.getText();
-			  tf.setText(s+"-");
+			  for(int i=0;i<s.length();i++)
+			  {
+			  if(s.charAt(0)=='-')
+			 
+				  tf.setText(" ");
+			  
+			  else
+				  {
+				  tf.setText(s+"-");
+				  }}
 			  tf1.setText(" ");
 		  });
 		  opbracket.setOnAction(e ->

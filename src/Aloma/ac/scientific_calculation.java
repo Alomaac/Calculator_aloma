@@ -3,6 +3,10 @@ package Aloma.ac;
 public class scientific_calculation {
 
 	Calculator_code cal = new Calculator_code();
+	/**  calculator scientific operation by loop of string input between  Brackets where  the string any scientific operation (cos ,sin,tan,tan-1,cos-1,sin-1)
+	 * @param s value input from user
+	 * @return string value T
+	 */
 	
 	String filter(String s)
 	{
@@ -265,12 +269,19 @@ public class scientific_calculation {
 		
 		return (T.isEmpty()) ? s : T;
 	}
-	
+	/** function solve any operation input from user there coal function filter
+	 * @param input  string  from user    
+	 * @return string result of operation 
+	 */
 	
 	public String solve(String input)
 	{
 		return cal.Solve(filter(input));
 	}
+	/**function fact calculator fact when  value less than 2 calculator n(n-1)*(n-2).....*(n)
+	 * @param n double from user
+	 * @return fact of value input
+	 */
 	
 	double fact(double n)
 	{
@@ -278,6 +289,10 @@ public class scientific_calculation {
 		return n*fact(n-1);
 		
 	}
+	/**function calculator n^2=n*n when n is value input  
+	 * @param n double value from user
+	 * @return double n*n
+	 */
 	double square(double n)
 	{
 	

@@ -528,7 +528,8 @@ public class Scentific extends Application {
 			  if(flag)tf.setText("");
 			  flag=false;
 			  String s=tf.getText();
-			  tf.setText(s+"3.141592653");
+			  
+			  tf.setText(s+Math.PI);
 			  tf1.setText(" ");
 		  });
 		  
@@ -538,9 +539,19 @@ public class Scentific extends Application {
 			  if(flag)tf.setText("");
 			  flag=true;
 			  String s=tf.getText();
-			  double m=Double.valueOf(s);
-			  m*=m;
-			  tf1.setText(m+"");
+			  for(int i=0;i<s.length();i++)
+			  {
+			  if(s.charAt(0)=='/')
+			 
+				  tf.setText(" ");
+			  
+			  else
+				  {
+				  double m=Double.valueOf(s);
+				  m*=m;
+				  tf1.setText(m+"");
+				  }}
+			  
 		  });
 		  n.setOnAction(e ->
 		  {

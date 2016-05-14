@@ -5,8 +5,9 @@ public class Calculator_code {
 	private int first;
 	private int second;
 	/**
-	 * @param user_input
-	 * @return
+	 * @param user_input 
+	 * This function takes input from user as string 
+	 * @return  result of all calculation as string 
 	 */
 	public String Solve(String user_input)
 	{
@@ -17,6 +18,11 @@ public class Calculator_code {
 		return rt; 
 	}
 	/////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * @param d1  first parameter that we want to calculate it's multiplicative
+	 * @param d2  second parameter the power of first parameter
+	 * @return result as double value
+	 */
 	private double squa(double d1,double d2)
 	{
 		String d4=String.valueOf(d1);
@@ -41,6 +47,12 @@ public class Calculator_code {
 	}
 	////////////////////////////////////////////////////////////////////////////////////
 
+	
+	/**
+	 * @param user_input a subexpression comes from user between brackets  
+	 * this function calculates expression between brackets in the main expression
+	 * @return result from that subexpression as string value
+	 */
 	private String solve_between_brackets(String user_input)
 	{
 		int f=0;
@@ -61,6 +73,12 @@ public class Calculator_code {
 		return user_input;
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * @param input  subexpression comes from larger expression from brackets after any operators 
+	 * @param i index of operator sign 
+	 * this function calculates  subexpression comes from larger expression from brackets after any operators 
+	 * @return number after operator and defiened stop when meet another operation in the expression
+	 */
 	private double cul_after(String input, int i) {
 		
 		String str="";
@@ -74,6 +92,12 @@ public class Calculator_code {
 		return Double.valueOf(str);
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * @param input subexpression from larger expression from brackets befor any operators
+	 * @param i index of operator sign
+	 * this function calculates  subexpression comes from larger expression from brackets befor any operators  
+	 * @return number befor operator and defiened stop when meet another operation in the expression
+	 */
 	private double cul_before(String input, int i) {
 		
 		String str="";
@@ -89,14 +113,19 @@ public class Calculator_code {
 		return Double.valueOf(str);
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	 * @param input 
+	 * this function calculates the expression that containes (* ,/) 
+	 * and tests if my expression has (-) operator before it ,to make the value negative  value 
+	 * @return the value of the (devision ,multiplication ) expression 
+	 */
 	private String mul_div(String input)
 	{
-		
 		for(int i=0; i<input.length(); ++i)
 		{
 			if(input.charAt(i)=='*' )
-			{
-				
+			{			
 				double d1=cul_before(input,i);
 				double d2;
 				if(first>0 && input.charAt(first-1)=='-')
@@ -188,8 +217,10 @@ public class Calculator_code {
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
-	 * @param input
-	 * @return
+	 * @param input 
+	 * this function calculates the expression that containes (+ ,-) 
+	 * and tests if my expression has (-) operator before it ,to make the value negative  value 
+	 * @return the value of the (summtion,subtraction ) expression 
 	 */
 	private String add_sub(String input)
 	{
@@ -262,6 +293,11 @@ public class Calculator_code {
 		return input;
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * @param input expression or subexpression 
+	 * this function to find which subexpression comes first depending on math periorty   
+	 * @return the result of the all main expressen that user enter it 
+	 */
 	private String det_sign(String input)
 	{
 		input = mul_div(input);
